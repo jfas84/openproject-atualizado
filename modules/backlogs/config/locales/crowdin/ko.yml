@@ -1,0 +1,144 @@
+#-- copyright
+#OpenProject is an open source project management software.
+#Copyright (C) the OpenProject GmbH
+#This program is free software; you can redistribute it and/or
+#modify it under the terms of the GNU General Public License version 3.
+#OpenProject is a fork of ChiliProject, which is a fork of Redmine. The copyright follows:
+#Copyright (C) 2006-2013 Jean-Philippe Lang
+#Copyright (C) 2010-2013 the ChiliProject Team
+#This program is free software; you can redistribute it and/or
+#modify it under the terms of the GNU General Public License
+#as published by the Free Software Foundation; either version 2
+#of the License, or (at your option) any later version.
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+#You should have received a copy of the GNU General Public License
+#along with this program; if not, write to the Free Software
+#Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#See COPYRIGHT and LICENSE files for more details.
+#++
+ko:
+  plugin_openproject_backlogs:
+    name: "OpenProject 백로그"
+    description: "이 모듈은 애자일 팀이 Scrum 프로젝트에서 OpenProject로 작업할 수 있도록 하는 기능을 추가합니다."
+  activerecord:
+    attributes:
+      sprint:
+        duration: "Sprint duration"
+      work_package:
+        position: "위치"
+        story_points: "스토리 포인트"
+        backlogs_work_package_type: "백로그 유형"
+    errors:
+      models:
+        work_package:
+          attributes:
+            blocks_ids:
+              can_only_contain_work_packages_of_current_sprint: "은(는) 현재 스프린트에서 작업 패키지의 ID만 포함할 수 있습니다."
+              must_block_at_least_one_work_package: "은(는) 티켓 하나 이상의 ID를 포함해야 합니다."
+            version_id:
+              task_version_must_be_the_same_as_story_version: "은(는) 부모 스토리의 버전과 동일해야 합니다."
+        sprint:
+          cannot_end_before_it_starts: "스프린트는 시작되기 전에 끝날 수 없습니다."
+  attributes:
+    task_type: "작업 유형"
+  backlogs:
+    any: "모두"
+    column_width: "Column width"
+    definition_of_done: "완료 정의"
+    impediment: "제한"
+    label_versions_default_fold_state: "접힌 버전 표시"
+    caption_versions_default_fold_state: "백로그를 볼 때 버전은 기본적으로 확장되지 않습니다. 각 버전을 수동으로 확장해야 합니다."
+    work_package_is_closed: "다음 경우에 작업 패키지가 완료됩니다."
+    label_is_done_status: "%{status_name} 상태는 완료를 의미합니다."
+    points_label:
+      other: "points"
+    positions_could_not_be_rebuilt: "위치를 다시 빌드할 수 없습니다."
+    positions_rebuilt_successfully: "위치가 성공적으로 다시 빌드되었습니다."
+    rebuild: "다시 빌드"
+    rebuild_positions: "위치 다시 빌드"
+    remaining_hours: "남은 작업"
+    show_burndown_chart: "번다운 차트"
+    story: "스토리"
+    story_points:
+      other: "%{count} story points"
+    task: "작업"
+    task_color: "작업 색상"
+    unassigned: "할당되지 않음"
+    user_preference:
+      header_backlogs: "백로그 모듈"
+      button_update_backlogs: "백로그 모듈 업데이트"
+    backlog_component:
+      blankslate_title: "%{name} is empty"
+      blankslate_description: "No items planned yet. Drag items here to add them."
+    backlog_header_component:
+      label_toggle_backlog: "Collapse/Expand %{name}"
+      label_story_count:
+        zero: "No stories in backlog"
+        one: "%{count} story in backlog"
+        other: "%{count} stories in backlog"
+    backlog_menu_component:
+      label_actions: "Backlog actions"
+      action_menu:
+        edit_sprint: "Edit sprint"
+        new_story: "New story"
+        stories_tasks: "Stories/Tasks"
+        task_board: "Task board"
+        burndown_chart: "Burndown chart"
+        wiki: "Wiki"
+        properties: "Properties"
+    story_component:
+      label_drag_story: "Move %{name}"
+    story_menu_component:
+      label_actions: "Story actions"
+  backlogs_points_burn_direction: "포인트 번 업/다운"
+  backlogs_product_backlog: "제품 백로그"
+  backlogs_story: "스토리"
+  backlogs_story_type: "스토리 유형"
+  backlogs_task: "일감"
+  backlogs_task_type: "작업 유형"
+  backlogs_wiki_template: "스프린트 위키 페이지에 대한 템플릿"
+  backlogs_empty_title: "No versions are defined yet"
+  backlogs_empty_action_text: "To start using backlogs, please create a version first"
+  backlogs_not_configured_title: "Backlogs not configured"
+  backlogs_not_configured_description: "Story and task types need to be set before using this module."
+  backlogs_not_configured_action_text: "Configure Backlogs"
+  burndown:
+    story_points: "Story points"
+    story_points_ideal: "Story points (ideal)"
+  errors:
+    attributes:
+      task_type:
+        cannot_be_story_type: "- 스토리 유형도 될 수 없습니다"
+  label_backlogs: "백로그"
+  label_backlogs_unconfigured: "백로그를 아직 구성하지 않았습니다. %{administration} > %{plugins}(으)로 이동한 다음 이 플러그인의 %{configure} 링크를 클릭하세요. 필드를 설정한 후 이 페이지로 돌아가서 해당 도구 사용을 시작하세요."
+  label_blocks_ids: "차단된 작업 패키지의 ID"
+  label_column_in_backlog: "백로그의 열"
+  label_points_burn_down: "아래"
+  label_points_burn_up: "위"
+  label_select_type: "유형 선택"
+  label_select_types: "유형 선택"
+  label_selected_type: "선택된 유형"
+  label_selected_types: "선택된 유형"
+  label_sprint_impediments: "스프린트 제한"
+  label_task_board: "작업 보드"
+  permission_view_master_backlog: "마스터 백로그 보기"
+  permission_view_taskboards: "작업 보드 보기"
+  permission_select_done_statuses: "완료 상태 선택"
+  permission_update_sprints: "스프린트 업데이트"
+  project_module_backlogs: "백로그"
+  rb_burndown_charts:
+    show:
+      blankslate_title: "No burndown data available"
+      blankslate_description: "Set start and end date for the sprint to generate a burndown chart."
+  remaining_hours: "남은 작업"
+  version_settings_display_label: "백로그의 열"
+  version_settings_display_option_left: "왼쪽"
+  version_settings_display_option_none: "없음"
+  version_settings_display_option_right: "오른쪽"
+  setting_plugin_openproject_backlogs_story_types_caption: |
+    백로그 스토리로 처리되는 유형(예: 기능, 사용자 스토리)입니다. 작업 유형과 달라야 합니다.
+  setting_plugin_openproject_backlogs_task_type_caption: |
+    스토리 작업에 사용되는 유형입니다. 스토리 유형과 달라야 합니다.

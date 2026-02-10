@@ -1,0 +1,144 @@
+#-- copyright
+#OpenProject is an open source project management software.
+#Copyright (C) the OpenProject GmbH
+#This program is free software; you can redistribute it and/or
+#modify it under the terms of the GNU General Public License version 3.
+#OpenProject is a fork of ChiliProject, which is a fork of Redmine. The copyright follows:
+#Copyright (C) 2006-2013 Jean-Philippe Lang
+#Copyright (C) 2010-2013 the ChiliProject Team
+#This program is free software; you can redistribute it and/or
+#modify it under the terms of the GNU General Public License
+#as published by the Free Software Foundation; either version 2
+#of the License, or (at your option) any later version.
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+#You should have received a copy of the GNU General Public License
+#along with this program; if not, write to the Free Software
+#Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#See COPYRIGHT and LICENSE files for more details.
+#++
+id:
+  plugin_openproject_backlogs:
+    name: "Backlog OpenProject"
+    description: "Modul ini menambahkan fitur yang memungkinkan tim yang gesit bekerja dengan OpenProject dalam proyek Scrum."
+  activerecord:
+    attributes:
+      sprint:
+        duration: "Sprint duration"
+      work_package:
+        position: "Posisi"
+        story_points: "Cerita poin"
+        backlogs_work_package_type: "Jenis jaminan tersimpan"
+    errors:
+      models:
+        work_package:
+          attributes:
+            blocks_ids:
+              can_only_contain_work_packages_of_current_sprint: "hanya bisa berisi ID paket kerja dalam sprint saat ini."
+              must_block_at_least_one_work_package: "harus berisi ID minimal satu tiket."
+            version_id:
+              task_version_must_be_the_same_as_story_version: "harus sama seperti versi kisah orang tua."
+        sprint:
+          cannot_end_before_it_starts: "Sprint tidak bisa berakhir sebelum mulai."
+  attributes:
+    task_type: "Jenis tugas"
+  backlogs:
+    any: "apapun"
+    column_width: "Column width"
+    definition_of_done: "Definisi Selesai"
+    impediment: "Halangan"
+    label_versions_default_fold_state: "Tampilkan versi terlipat"
+    caption_versions_default_fold_state: "Versi tidak akan diperluas secara default saat melihat daftar tugas yang tertunda. Setiap versi harus diperluas secara manual."
+    work_package_is_closed: "Paket kerja selesai, ketika"
+    label_is_done_status: "Status %{status_name} berarti selesai"
+    points_label:
+      other: "points"
+    positions_could_not_be_rebuilt: "Posisi tidak dapat dibangun kembali."
+    positions_rebuilt_successfully: "Posisi berhasil dibangun kembali."
+    rebuild: "Membangun kembali"
+    rebuild_positions: "Membangun posisi kembali"
+    remaining_hours: "Pekerjaan yang tersisa"
+    show_burndown_chart: "Burndown grafik"
+    story: "Cerita"
+    story_points:
+      other: "%{count} story points"
+    task: "Tugas"
+    task_color: "Warna tugas"
+    unassigned: "Belum ditetapkan"
+    user_preference:
+      header_backlogs: "Modul backlog"
+      button_update_backlogs: "Perbarui modul backlog"
+    backlog_component:
+      blankslate_title: "%{name} is empty"
+      blankslate_description: "No items planned yet. Drag items here to add them."
+    backlog_header_component:
+      label_toggle_backlog: "Collapse/Expand %{name}"
+      label_story_count:
+        zero: "No stories in backlog"
+        one: "%{count} story in backlog"
+        other: "%{count} stories in backlog"
+    backlog_menu_component:
+      label_actions: "Backlog actions"
+      action_menu:
+        edit_sprint: "Edit sprint"
+        new_story: "New story"
+        stories_tasks: "Stories/Tasks"
+        task_board: "Task board"
+        burndown_chart: "Burndown chart"
+        wiki: "Wiki"
+        properties: "Properties"
+    story_component:
+      label_drag_story: "Move %{name}"
+    story_menu_component:
+      label_actions: "Story actions"
+  backlogs_points_burn_direction: "Poin terbakar habis / turun"
+  backlogs_product_backlog: "Backlog produk"
+  backlogs_story: "Cerita"
+  backlogs_story_type: "Jenis cerita"
+  backlogs_task: "Tugas"
+  backlogs_task_type: "Jenis tugas"
+  backlogs_wiki_template: "Template untuk halaman wiki sprint"
+  backlogs_empty_title: "No versions are defined yet"
+  backlogs_empty_action_text: "To start using backlogs, please create a version first"
+  backlogs_not_configured_title: "Backlogs not configured"
+  backlogs_not_configured_description: "Story and task types need to be set before using this module."
+  backlogs_not_configured_action_text: "Configure Backlogs"
+  burndown:
+    story_points: "Story points"
+    story_points_ideal: "Story points (ideal)"
+  errors:
+    attributes:
+      task_type:
+        cannot_be_story_type: "bisa juga bukan jenis cerita"
+  label_backlogs: "Backlogs"
+  label_backlogs_unconfigured: "Anda belum mengkonfigurasi Backlogs. Silakan masuk ke %{administration}> %{plugins}, lalu klik pada link %{configure} untuk plugin ini. Setelah Anda menyetel bidang, kembali ke halaman ini untuk mulai menggunakan alat ini."
+  label_blocks_ids: "ID dari paket pekerjaan yang diblokir"
+  label_column_in_backlog: "Kolom di backlog"
+  label_points_burn_down: "Menurun"
+  label_points_burn_up: "Naik"
+  label_select_type: "Pilih jenis"
+  label_select_types: "Pilih jenis"
+  label_selected_type: "Jenis yang dipilih"
+  label_selected_types: "Jenis yang dipilih"
+  label_sprint_impediments: "Hanbatan kekuatan"
+  label_task_board: "Papan tugas"
+  permission_view_master_backlog: "Lihat backlog master"
+  permission_view_taskboards: "Lihat papan tugas"
+  permission_select_done_statuses: "Pilih status selesai"
+  permission_update_sprints: "Perbarui sprint"
+  project_module_backlogs: "Backlogs"
+  rb_burndown_charts:
+    show:
+      blankslate_title: "No burndown data available"
+      blankslate_description: "Set start and end date for the sprint to generate a burndown chart."
+  remaining_hours: "pekerjaan yang tersisa"
+  version_settings_display_label: "Kolom di backlog"
+  version_settings_display_option_left: "kiri"
+  version_settings_display_option_none: "tidak ada"
+  version_settings_display_option_right: "kanan"
+  setting_plugin_openproject_backlogs_story_types_caption: |
+    Jenis yang dianggap sebagai cerita backlog (misalnya Fitur, Cerita Pengguna). Harus berbeda dari jenis tugas.
+  setting_plugin_openproject_backlogs_task_type_caption: |
+    Jenis yang digunakan untuk tugas cerita. Harus berbeda dari jenis tugas.

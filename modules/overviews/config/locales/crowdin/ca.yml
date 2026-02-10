@@ -1,0 +1,5 @@
+ca:
+  overviews:
+    label_home: "%{workspace_type} home"
+    label_dashboard: "Tauler de control"
+    label_overview: "Visió general"

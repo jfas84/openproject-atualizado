@@ -1,0 +1,6 @@
+pt-PT:
+  js:
+    work_packages:
+      label_gantt_chart_plural: "Gráficos de Gantt"
+      default_queries:
+        milestones: 'Marcos'

@@ -1,0 +1,144 @@
+#-- copyright
+#OpenProject is an open source project management software.
+#Copyright (C) the OpenProject GmbH
+#This program is free software; you can redistribute it and/or
+#modify it under the terms of the GNU General Public License version 3.
+#OpenProject is a fork of ChiliProject, which is a fork of Redmine. The copyright follows:
+#Copyright (C) 2006-2013 Jean-Philippe Lang
+#Copyright (C) 2010-2013 the ChiliProject Team
+#This program is free software; you can redistribute it and/or
+#modify it under the terms of the GNU General Public License
+#as published by the Free Software Foundation; either version 2
+#of the License, or (at your option) any later version.
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+#You should have received a copy of the GNU General Public License
+#along with this program; if not, write to the Free Software
+#Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#See COPYRIGHT and LICENSE files for more details.
+#++
+zh-TW:
+  plugin_openproject_backlogs:
+    name: "OpenProject代辦事項"
+    description: "此模組新增了讓敏捷團隊能夠在 Scrum 專案中使用 OpenProject 的功能。"
+  activerecord:
+    attributes:
+      sprint:
+        duration: "Sprint duration"
+      work_package:
+        position: "位置"
+        story_points: "需求重要性"
+        backlogs_work_package_type: "待辦事項類型"
+    errors:
+      models:
+        work_package:
+          attributes:
+            blocks_ids:
+              can_only_contain_work_packages_of_current_sprint: "只能包含當前衝刺（Sprint）中的工作套件 ID。"
+              must_block_at_least_one_work_package: "必須包含至少一個項目的 ID"
+            version_id:
+              task_version_must_be_the_same_as_story_version: "必須與上層「使用者需求」(User Story)的版本相同。"
+        sprint:
+          cannot_end_before_it_starts: "進度不可以在開始前結束"
+  attributes:
+    task_type: "任務類型"
+  backlogs:
+    any: "任何"
+    column_width: "Column width"
+    definition_of_done: "定義"
+    impediment: "阻礙"
+    label_versions_default_fold_state: "顯示精簡版本"
+    caption_versions_default_fold_state: "檢視待辦清單時，版本預設不會展開，需手動逐一展開。"
+    work_package_is_closed: "視為工作套件已完成"
+    label_is_done_status: "狀態 %{status_name} 表示完成"
+    points_label:
+      other: "points"
+    positions_could_not_be_rebuilt: "無法重建位置"
+    positions_rebuilt_successfully: "位置重建成功"
+    rebuild: "重建"
+    rebuild_positions: "重建位置"
+    remaining_hours: "剩餘工時"
+    show_burndown_chart: "未完成圖"
+    story: "使用者需求"
+    story_points:
+      other: "%{count} story points"
+    task: "任務"
+    task_color: "任務顏色"
+    unassigned: "尚未指派"
+    user_preference:
+      header_backlogs: "待辦清單模組"
+      button_update_backlogs: "更新待辦清單模組"
+    backlog_component:
+      blankslate_title: "%{name} is empty"
+      blankslate_description: "No items planned yet. Drag items here to add them."
+    backlog_header_component:
+      label_toggle_backlog: "Collapse/Expand %{name}"
+      label_story_count:
+        zero: "No stories in backlog"
+        one: "%{count} story in backlog"
+        other: "%{count} stories in backlog"
+    backlog_menu_component:
+      label_actions: "Backlog actions"
+      action_menu:
+        edit_sprint: "Edit sprint"
+        new_story: "New story"
+        stories_tasks: "Stories/Tasks"
+        task_board: "Task board"
+        burndown_chart: "Burndown chart"
+        wiki: "Wiki"
+        properties: "Properties"
+    story_component:
+      label_drag_story: "Move %{name}"
+    story_menu_component:
+      label_actions: "Story actions"
+  backlogs_points_burn_direction: "重要性 增加/減少"
+  backlogs_product_backlog: "產品待辦事項"
+  backlogs_story: "使用者需求"
+  backlogs_story_type: "需求類型"
+  backlogs_task: "任務"
+  backlogs_task_type: "任務類型"
+  backlogs_wiki_template: "進度的 Wiki 頁面樣板"
+  backlogs_empty_title: "No versions are defined yet"
+  backlogs_empty_action_text: "To start using backlogs, please create a version first"
+  backlogs_not_configured_title: "Backlogs not configured"
+  backlogs_not_configured_description: "Story and task types need to be set before using this module."
+  backlogs_not_configured_action_text: "Configure Backlogs"
+  burndown:
+    story_points: "Story points"
+    story_points_ideal: "Story points (ideal)"
+  errors:
+    attributes:
+      task_type:
+        cannot_be_story_type: "不能同時是故事類型"
+  label_backlogs: "待辦事項"
+  label_backlogs_unconfigured: "您尚未設定待辦事項。請前往 '%{administration} -> %{plugins}' 然後在 %{configure} 連結上按一下。當你設定欄位後，再返回這個頁面使用這個工具。"
+  label_blocks_ids: "被禁止的工作套件 IDs"
+  label_column_in_backlog: "待辦事項的欄位"
+  label_points_burn_down: "減少"
+  label_points_burn_up: "增加"
+  label_select_type: "選擇類型"
+  label_select_types: "選擇類型"
+  label_selected_type: "所選類型"
+  label_selected_types: "所選類型"
+  label_sprint_impediments: "進度阻礙"
+  label_task_board: "任務看板"
+  permission_view_master_backlog: "檢視主待辦事項"
+  permission_view_taskboards: "檢視任務看板"
+  permission_select_done_statuses: "選擇完成狀態"
+  permission_update_sprints: "更新進度"
+  project_module_backlogs: "待辦事項"
+  rb_burndown_charts:
+    show:
+      blankslate_title: "No burndown data available"
+      blankslate_description: "Set start and end date for the sprint to generate a burndown chart."
+  remaining_hours: "剩餘工時"
+  version_settings_display_label: "待辦事項的欄位"
+  version_settings_display_option_left: "左"
+  version_settings_display_option_none: "無"
+  version_settings_display_option_right: "右"
+  setting_plugin_openproject_backlogs_story_types_caption: |
+    視為待辦清單（Backlog）故事的類型（例如：功能、使用者故事）。必須與任務類型不同。
+  setting_plugin_openproject_backlogs_task_type_caption: |
+    用於故事任務的類型。必須與故事類型不同。

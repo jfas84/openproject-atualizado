@@ -1,0 +1,144 @@
+#-- copyright
+#OpenProject is an open source project management software.
+#Copyright (C) the OpenProject GmbH
+#This program is free software; you can redistribute it and/or
+#modify it under the terms of the GNU General Public License version 3.
+#OpenProject is a fork of ChiliProject, which is a fork of Redmine. The copyright follows:
+#Copyright (C) 2006-2013 Jean-Philippe Lang
+#Copyright (C) 2010-2013 the ChiliProject Team
+#This program is free software; you can redistribute it and/or
+#modify it under the terms of the GNU General Public License
+#as published by the Free Software Foundation; either version 2
+#of the License, or (at your option) any later version.
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+#You should have received a copy of the GNU General Public License
+#along with this program; if not, write to the Free Software
+#Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#See COPYRIGHT and LICENSE files for more details.
+#++
+ja:
+  plugin_openproject_backlogs:
+    name: "OpenProjectのバックログ"
+    description: "このモジュールには、アジャイルチームがスクラムプロジェクトでOpenProjectを使用できるようにする機能が追加されています。"
+  activerecord:
+    attributes:
+      sprint:
+        duration: "Sprint duration"
+      work_package:
+        position: "位置"
+        story_points: "ストーリーポイント"
+        backlogs_work_package_type: "バックログの種類"
+    errors:
+      models:
+        work_package:
+          attributes:
+            blocks_ids:
+              can_only_contain_work_packages_of_current_sprint: "現在のスプリント内のワークパッケージIDのみを含めることができます。"
+              must_block_at_least_one_work_package: "は少なくとも 1つのチケットIDを含める必要があります。"
+            version_id:
+              task_version_must_be_the_same_as_story_version: "親ストーリーのバージョンと同じでなければなりません。"
+        sprint:
+          cannot_end_before_it_starts: "スプリントは開始する前に終了できません。"
+  attributes:
+    task_type: "タスクのタイプ"
+  backlogs:
+    any: "全て"
+    column_width: "Column width"
+    definition_of_done: "「終了」の定義"
+    impediment: "障害事項"
+    label_versions_default_fold_state: "バージョンを折り畳んで表示"
+    caption_versions_default_fold_state: "バックログを表示する場合、デフォルトではバージョンは展開されません。各バージョンは手動で展開する必要があります。"
+    work_package_is_closed: "ワークパッケージが終了するには"
+    label_is_done_status: "ステータス%{status_name}は完了として扱う"
+    points_label:
+      other: "points"
+    positions_could_not_be_rebuilt: "位置は再構築されませんでした。"
+    positions_rebuilt_successfully: "位置情報は再構築しました。"
+    rebuild: "再構築"
+    rebuild_positions: "位置情報を再構築"
+    remaining_hours: "残時間"
+    show_burndown_chart: "バーンダウングラフ"
+    story: "ストーリー"
+    story_points:
+      other: "%{count} story points"
+    task: "タスク"
+    task_color: "タスクの色"
+    unassigned: "未割り当て"
+    user_preference:
+      header_backlogs: "バックログモジュール"
+      button_update_backlogs: "バックログモジュールを更新"
+    backlog_component:
+      blankslate_title: "%{name} is empty"
+      blankslate_description: "No items planned yet. Drag items here to add them."
+    backlog_header_component:
+      label_toggle_backlog: "Collapse/Expand %{name}"
+      label_story_count:
+        zero: "No stories in backlog"
+        one: "%{count} story in backlog"
+        other: "%{count} stories in backlog"
+    backlog_menu_component:
+      label_actions: "Backlog actions"
+      action_menu:
+        edit_sprint: "Edit sprint"
+        new_story: "New story"
+        stories_tasks: "Stories/Tasks"
+        task_board: "Task board"
+        burndown_chart: "Burndown chart"
+        wiki: "Wiki"
+        properties: "Properties"
+    story_component:
+      label_drag_story: "Move %{name}"
+    story_menu_component:
+      label_actions: "Story actions"
+  backlogs_points_burn_direction: "ポイントのバーンアップ/バーンダウン"
+  backlogs_product_backlog: "プロダクトバックログ"
+  backlogs_story: "ストーリー"
+  backlogs_story_type: "ストーリーの種類"
+  backlogs_task: "タスク"
+  backlogs_task_type: "タスクの種類"
+  backlogs_wiki_template: "スプリントのWikiページのテンプレート"
+  backlogs_empty_title: "No versions are defined yet"
+  backlogs_empty_action_text: "To start using backlogs, please create a version first"
+  backlogs_not_configured_title: "Backlogs not configured"
+  backlogs_not_configured_description: "Story and task types need to be set before using this module."
+  backlogs_not_configured_action_text: "Configure Backlogs"
+  burndown:
+    story_points: "Story points"
+    story_points_ideal: "Story points (ideal)"
+  errors:
+    attributes:
+      task_type:
+        cannot_be_story_type: "can not also be a story type"
+  label_backlogs: "バックログ"
+  label_backlogs_unconfigured: "バックログは未設定です。%{administration} > %{plugins}をアクセスして、このプラグインの%{configure}リンクをクリックしてください。フィールドを設定した後、このページに戻ってツールを使用開始してください。"
+  label_blocks_ids: "ブロックされているワークパッケージのID"
+  label_column_in_backlog: "バックログの列"
+  label_points_burn_down: "ダウン"
+  label_points_burn_up: "アップ"
+  label_select_type: "タイプを選択"
+  label_select_types: "タイプを選択"
+  label_selected_type: "タイプを選択"
+  label_selected_types: "タイプを選択"
+  label_sprint_impediments: "スプリント障害事項"
+  label_task_board: "かんばん"
+  permission_view_master_backlog: "マスター バックログの表示"
+  permission_view_taskboards: "かんばんの表示"
+  permission_select_done_statuses: "完了ステータスを選択"
+  permission_update_sprints: "スプリントの更新"
+  project_module_backlogs: "バックログ"
+  rb_burndown_charts:
+    show:
+      blankslate_title: "No burndown data available"
+      blankslate_description: "Set start and end date for the sprint to generate a burndown chart."
+  remaining_hours: "残時間"
+  version_settings_display_label: "バックログの列"
+  version_settings_display_option_left: "左へ"
+  version_settings_display_option_none: "なし"
+  version_settings_display_option_right: "右へ"
+  setting_plugin_openproject_backlogs_story_types_caption: |
+    Types treated as backlog stories (e.g., Feature, User story). Must differ from task type.
+  setting_plugin_openproject_backlogs_task_type_caption: |
+    ストーリータスクに使用されるタイプ。ストーリータイプと異なる必要があります。

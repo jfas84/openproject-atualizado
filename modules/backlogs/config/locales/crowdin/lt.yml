@@ -1,0 +1,150 @@
+#-- copyright
+#OpenProject is an open source project management software.
+#Copyright (C) the OpenProject GmbH
+#This program is free software; you can redistribute it and/or
+#modify it under the terms of the GNU General Public License version 3.
+#OpenProject is a fork of ChiliProject, which is a fork of Redmine. The copyright follows:
+#Copyright (C) 2006-2013 Jean-Philippe Lang
+#Copyright (C) 2010-2013 the ChiliProject Team
+#This program is free software; you can redistribute it and/or
+#modify it under the terms of the GNU General Public License
+#as published by the Free Software Foundation; either version 2
+#of the License, or (at your option) any later version.
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+#You should have received a copy of the GNU General Public License
+#along with this program; if not, write to the Free Software
+#Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#See COPYRIGHT and LICENSE files for more details.
+#++
+lt:
+  plugin_openproject_backlogs:
+    name: "OpenProject žurnalai"
+    description: "Šis modulis prideda funkcionalumą, leidžianti agile komandoms dirbti su OpenProject Scrum projektuose."
+  activerecord:
+    attributes:
+      sprint:
+        duration: "Sprint duration"
+      work_package:
+        position: "Vieta"
+        story_points: "Istorijos taškai"
+        backlogs_work_package_type: "Darbų sąrašo tipas"
+    errors:
+      models:
+        work_package:
+          attributes:
+            blocks_ids:
+              can_only_contain_work_packages_of_current_sprint: "galima įtraukti tik dabartinio sprinto darbo paketų ID."
+              must_block_at_least_one_work_package: "turi turėti bent vieną ID."
+            version_id:
+              task_version_must_be_the_same_as_story_version: "turi būti tokia pati kaip ir tėvinės istorijos versija."
+        sprint:
+          cannot_end_before_it_starts: "Sprintas negali baigtis prieš prasidėdamas."
+  attributes:
+    task_type: "Task type"
+  backlogs:
+    any: "bet koks"
+    column_width: "Column width"
+    definition_of_done: "Pabaigimo apibrėžimas"
+    impediment: "Kliūtis"
+    label_versions_default_fold_state: "Rodyti suskleistas versijas"
+    caption_versions_default_fold_state: "Versions will not be expanded by default when viewing backlogs. Each one has to be manually expanded."
+    work_package_is_closed: "Darbo paketas baigtas, kai"
+    label_is_done_status: "Būsena %{status_name} reiškia atlikta"
+    points_label:
+      one: "point"
+      few: "points"
+      many: "points"
+      other: "points"
+    positions_could_not_be_rebuilt: "Nepavyko perkurti pozicijų."
+    positions_rebuilt_successfully: "Pozicijos sėkmingai perkurtos."
+    rebuild: "Perkurti"
+    rebuild_positions: "Perkurti pozicijas"
+    remaining_hours: "Liko darbo"
+    show_burndown_chart: "Perdegimo lentelė"
+    story: "Istorija"
+    story_points:
+      one: "%{count} story point"
+      few: "%{count} story points"
+      many: "%{count} story points"
+      other: "%{count} story points"
+    task: "Užduotis"
+    task_color: "Užduoties spalva"
+    unassigned: "Nepriskirta"
+    user_preference:
+      header_backlogs: "Backlogs module"
+      button_update_backlogs: "Update backlogs module"
+    backlog_component:
+      blankslate_title: "%{name} is empty"
+      blankslate_description: "No items planned yet. Drag items here to add them."
+    backlog_header_component:
+      label_toggle_backlog: "Collapse/Expand %{name}"
+      label_story_count:
+        zero: "No stories in backlog"
+        one: "%{count} story in backlog"
+        other: "%{count} stories in backlog"
+    backlog_menu_component:
+      label_actions: "Backlog actions"
+      action_menu:
+        edit_sprint: "Edit sprint"
+        new_story: "New story"
+        stories_tasks: "Stories/Tasks"
+        task_board: "Task board"
+        burndown_chart: "Burndown chart"
+        wiki: "Wiki"
+        properties: "Properties"
+    story_component:
+      label_drag_story: "Move %{name}"
+    story_menu_component:
+      label_actions: "Story actions"
+  backlogs_points_burn_direction: "Taškai dega aukštyn/žemyn"
+  backlogs_product_backlog: "Produkto darbų sąrašas"
+  backlogs_story: "Istorija"
+  backlogs_story_type: "Istorijų tipai"
+  backlogs_task: "Užduotis"
+  backlogs_task_type: "Užduoties tipas"
+  backlogs_wiki_template: "Šablonas sprinto wiki puslapiui"
+  backlogs_empty_title: "No versions are defined yet"
+  backlogs_empty_action_text: "To start using backlogs, please create a version first"
+  backlogs_not_configured_title: "Backlogs not configured"
+  backlogs_not_configured_description: "Story and task types need to be set before using this module."
+  backlogs_not_configured_action_text: "Configure Backlogs"
+  burndown:
+    story_points: "Story points"
+    story_points_ideal: "Story points (ideal)"
+  errors:
+    attributes:
+      task_type:
+        cannot_be_story_type: "can not also be a story type"
+  label_backlogs: "Darbų sąrašai"
+  label_backlogs_unconfigured: "Jūs dar nesukonfigūravote Darbų sąrašų. Prašome eiti į  %{administration} > %{plugins}, tada nuspausti ant  %{configure} nuorodos šiam įskiepiui. Kai nustatysite laukus, grįžkite čia ir pradėkite naudoti instrumentą."
+  label_blocks_ids: "Blokuotų darbų paketų ID reikšmės"
+  label_column_in_backlog: "Stulpelis darbų sąraše"
+  label_points_burn_down: "Žemyn"
+  label_points_burn_up: "Aukštyn"
+  label_select_type: "Select a type"
+  label_select_types: "Select types"
+  label_selected_type: "Selected type"
+  label_selected_types: "Selected types"
+  label_sprint_impediments: "Sprinto trukdžiai"
+  label_task_board: "Užduočių lenta"
+  permission_view_master_backlog: "Peržiūrėti pagrindinį darbų sąrašą"
+  permission_view_taskboards: "Peržiūrėti užduočių lentas"
+  permission_select_done_statuses: "Parinkite atliktas būsenas"
+  permission_update_sprints: "Atnaujinti sprintus"
+  project_module_backlogs: "Darbų sąrašai"
+  rb_burndown_charts:
+    show:
+      blankslate_title: "No burndown data available"
+      blankslate_description: "Set start and end date for the sprint to generate a burndown chart."
+  remaining_hours: "liko darbo"
+  version_settings_display_label: "Stulpelis darbų sąraše"
+  version_settings_display_option_left: "kairėn"
+  version_settings_display_option_none: "joks"
+  version_settings_display_option_right: "dešinėn"
+  setting_plugin_openproject_backlogs_story_types_caption: |
+    Types treated as backlog stories (e.g., Feature, User story). Must differ from task type.
+  setting_plugin_openproject_backlogs_task_type_caption: |
+    Type used for story tasks. Must differ from story types.

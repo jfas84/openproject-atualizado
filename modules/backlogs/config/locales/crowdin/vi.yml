@@ -1,0 +1,144 @@
+#-- copyright
+#OpenProject is an open source project management software.
+#Copyright (C) the OpenProject GmbH
+#This program is free software; you can redistribute it and/or
+#modify it under the terms of the GNU General Public License version 3.
+#OpenProject is a fork of ChiliProject, which is a fork of Redmine. The copyright follows:
+#Copyright (C) 2006-2013 Jean-Philippe Lang
+#Copyright (C) 2010-2013 the ChiliProject Team
+#This program is free software; you can redistribute it and/or
+#modify it under the terms of the GNU General Public License
+#as published by the Free Software Foundation; either version 2
+#of the License, or (at your option) any later version.
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+#You should have received a copy of the GNU General Public License
+#along with this program; if not, write to the Free Software
+#Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#See COPYRIGHT and LICENSE files for more details.
+#++
+vi:
+  plugin_openproject_backlogs:
+    name: "Tồn đọng dự án mở"
+    description: "Mô-đun này bổ sung các tính năng cho phép các nhóm linh hoạt làm việc với OpenProject trong các dự án Scrum."
+  activerecord:
+    attributes:
+      sprint:
+        duration: "Sprint duration"
+      work_package:
+        position: "Vị trí"
+        story_points: "Điểm cốt truyện"
+        backlogs_work_package_type: "Loại Backlog"
+    errors:
+      models:
+        work_package:
+          attributes:
+            blocks_ids:
+              can_only_contain_work_packages_of_current_sprint: "chỉ có thể chứa ID của các gói công việc trong sprint hiện tại.\n"
+              must_block_at_least_one_work_package: "bắt buộc phải chứa ID của ít nhất một việc"
+            version_id:
+              task_version_must_be_the_same_as_story_version: "phải giống với phiên bản của bảng cha."
+        sprint:
+          cannot_end_before_it_starts: "Sprint không thể kết thúc trước khi nó bắt đầu."
+  attributes:
+    task_type: "Loại nhiệm vụ"
+  backlogs:
+    any: "bất kỳ"
+    column_width: "Column width"
+    definition_of_done: "Định nghĩa về Hoàn thành"
+    impediment: "Trở ngại"
+    label_versions_default_fold_state: "Hiển thị các phiên bản \n"
+    caption_versions_default_fold_state: "Các phiên bản sẽ không được mở rộng theo mặc định khi xem hồ sơ tồn đọng. Mỗi cái phải được mở rộng bằng tay."
+    work_package_is_closed: "Gói công việc được thực hiện, khi"
+    label_is_done_status: "Trạng thái %{status_name} nghĩa là đã xong"
+    points_label:
+      other: "points"
+    positions_could_not_be_rebuilt: "Không thể tạo lại vị trí."
+    positions_rebuilt_successfully: "Tạo lại vị trí thành công."
+    rebuild: "Dựng lại"
+    rebuild_positions: "Xây dựng lại vị trí"
+    remaining_hours: "Công việc còn lại"
+    show_burndown_chart: "Biểu đồ đốt cháy"
+    story: "Câu chuyện"
+    story_points:
+      other: "%{count} story points"
+    task: "Nhiệm vụ"
+    task_color: "Màu nhiệm vụ"
+    unassigned: "Chưa được chỉ định"
+    user_preference:
+      header_backlogs: "Mô-đun tồn đọng"
+      button_update_backlogs: "Cập nhật mô-đun tồn đọng"
+    backlog_component:
+      blankslate_title: "%{name} is empty"
+      blankslate_description: "No items planned yet. Drag items here to add them."
+    backlog_header_component:
+      label_toggle_backlog: "Collapse/Expand %{name}"
+      label_story_count:
+        zero: "No stories in backlog"
+        one: "%{count} story in backlog"
+        other: "%{count} stories in backlog"
+    backlog_menu_component:
+      label_actions: "Backlog actions"
+      action_menu:
+        edit_sprint: "Edit sprint"
+        new_story: "New story"
+        stories_tasks: "Stories/Tasks"
+        task_board: "Task board"
+        burndown_chart: "Burndown chart"
+        wiki: "Wiki"
+        properties: "Properties"
+    story_component:
+      label_drag_story: "Move %{name}"
+    story_menu_component:
+      label_actions: "Story actions"
+  backlogs_points_burn_direction: "Điểm tăng/giảm"
+  backlogs_product_backlog: "Product backlog"
+  backlogs_story: "Cốt truyện"
+  backlogs_story_type: "Loại câu truyện tóm tắt"
+  backlogs_task: "Nhiệm vụ"
+  backlogs_task_type: "Loại công việc"
+  backlogs_wiki_template: "Mẫu cho trang wiki chạy nước rút"
+  backlogs_empty_title: "No versions are defined yet"
+  backlogs_empty_action_text: "To start using backlogs, please create a version first"
+  backlogs_not_configured_title: "Backlogs not configured"
+  backlogs_not_configured_description: "Story and task types need to be set before using this module."
+  backlogs_not_configured_action_text: "Configure Backlogs"
+  burndown:
+    story_points: "Story points"
+    story_points_ideal: "Story points (ideal)"
+  errors:
+    attributes:
+      task_type:
+        cannot_be_story_type: "cũng không thể là một loại cốt truyện"
+  label_backlogs: "tồn đọng"
+  label_backlogs_unconfigured: "Bạn chưa cấu hình Bảng nhiệm vụ tồn đọng. Vui lòng vào %{administration} > %{plugins}, sau đó nhấp vào liên kết %{configure} cho gắn thêm này. Khi bạn đã thiết lập các trường, quay lại trang này để bắt đầu sử dụng công cụ."
+  label_blocks_ids: "ID của các work package bị chặn"
+  label_column_in_backlog: "Cột tồn đọng"
+  label_points_burn_down: "Xuống"
+  label_points_burn_up: "lên"
+  label_select_type: "Chọn một loại"
+  label_select_types: "Chọn loại"
+  label_selected_type: "Loại đã chọn"
+  label_selected_types: "Các loại đã chọn"
+  label_sprint_impediments: "Trở ngại nước rút"
+  label_task_board: "Bảng nhiệm vụ"
+  permission_view_master_backlog: "Xem tồn đọng chính"
+  permission_view_taskboards: "Xem bảng tác vụ"
+  permission_select_done_statuses: "Chọn trạng thái hoàn thành"
+  permission_update_sprints: "Cập nhật các lần chạy nước rút"
+  project_module_backlogs: "tồn đọng"
+  rb_burndown_charts:
+    show:
+      blankslate_title: "No burndown data available"
+      blankslate_description: "Set start and end date for the sprint to generate a burndown chart."
+  remaining_hours: "công việc còn lại"
+  version_settings_display_label: "Cột tồn đọng"
+  version_settings_display_option_left: "trái"
+  version_settings_display_option_none: "không"
+  version_settings_display_option_right: "phải"
+  setting_plugin_openproject_backlogs_story_types_caption: |
+    Các loại được coi là cốt truyện tồn đọng (ví dụ: Tính năng, Cốt truyện của người dùng). Phải khác với loại nhiệm vụ.
+  setting_plugin_openproject_backlogs_task_type_caption: |
+    Loại được sử dụng cho nhiệm vụ câu chuyện. Phải khác với các loại câu chuyện.

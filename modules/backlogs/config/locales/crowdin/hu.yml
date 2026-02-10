@@ -1,0 +1,146 @@
+#-- copyright
+#OpenProject is an open source project management software.
+#Copyright (C) the OpenProject GmbH
+#This program is free software; you can redistribute it and/or
+#modify it under the terms of the GNU General Public License version 3.
+#OpenProject is a fork of ChiliProject, which is a fork of Redmine. The copyright follows:
+#Copyright (C) 2006-2013 Jean-Philippe Lang
+#Copyright (C) 2010-2013 the ChiliProject Team
+#This program is free software; you can redistribute it and/or
+#modify it under the terms of the GNU General Public License
+#as published by the Free Software Foundation; either version 2
+#of the License, or (at your option) any later version.
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+#You should have received a copy of the GNU General Public License
+#along with this program; if not, write to the Free Software
+#Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#See COPYRIGHT and LICENSE files for more details.
+#++
+hu:
+  plugin_openproject_backlogs:
+    name: "OpenProject Backlogs"
+    description: "This module adds features enabling agile teams to work with OpenProject in Scrum projects."
+  activerecord:
+    attributes:
+      sprint:
+        duration: "Sprint duration"
+      work_package:
+        position: "Pozició"
+        story_points: "Story pontok"
+        backlogs_work_package_type: "Backlog típus"
+    errors:
+      models:
+        work_package:
+          attributes:
+            blocks_ids:
+              can_only_contain_work_packages_of_current_sprint: "csak a jelenlegi sprint munkacsomagjainak azonosítóit tartalmazhatja."
+              must_block_at_least_one_work_package: "legalább egy munkacsomag azonosítóját tartalmaznia kell."
+            version_id:
+              task_version_must_be_the_same_as_story_version: "a szülő story verziójával megegyezőnek kell lennie."
+        sprint:
+          cannot_end_before_it_starts: "Sprint nem érhet véget, mielőtt elindul."
+  attributes:
+    task_type: "Feladat típusa"
+  backlogs:
+    any: "bármely"
+    column_width: "Column width"
+    definition_of_done: "A \"Kész\" meghatározása"
+    impediment: "Akadály"
+    label_versions_default_fold_state: "Összecsukott verziók mutatása"
+    caption_versions_default_fold_state: "A verziók alapértelmezés szerint nem lesznek kibontva a várólista (backlog) megtekintésekor. Mindegyiket manuálisan kell kibontani."
+    work_package_is_closed: "A munkacsomag készen áll, ekkor"
+    label_is_done_status: "Státusz %{status_name} kész állapotot jelöl"
+    points_label:
+      one: "point"
+      other: "points"
+    positions_could_not_be_rebuilt: "A pozíciókat nem lehet újraépíteni."
+    positions_rebuilt_successfully: "A pozíciók újraépítése sikerült."
+    rebuild: "Újraépítés"
+    rebuild_positions: "Pozíciók újraépítése"
+    remaining_hours: "Hátralévő munka"
+    show_burndown_chart: "Napi teendő ábra"
+    story: "Sztori"
+    story_points:
+      one: "%{count} story point"
+      other: "%{count} story points"
+    task: "Feladat"
+    task_color: "Feladat színe"
+    unassigned: "Nincs hozzárendelés"
+    user_preference:
+      header_backlogs: "Várólista modul"
+      button_update_backlogs: "Várólista modul frissítése"
+    backlog_component:
+      blankslate_title: "%{name} is empty"
+      blankslate_description: "No items planned yet. Drag items here to add them."
+    backlog_header_component:
+      label_toggle_backlog: "Collapse/Expand %{name}"
+      label_story_count:
+        zero: "No stories in backlog"
+        one: "%{count} story in backlog"
+        other: "%{count} stories in backlog"
+    backlog_menu_component:
+      label_actions: "Backlog actions"
+      action_menu:
+        edit_sprint: "Edit sprint"
+        new_story: "New story"
+        stories_tasks: "Stories/Tasks"
+        task_board: "Task board"
+        burndown_chart: "Burndown chart"
+        wiki: "Wiki"
+        properties: "Properties"
+    story_component:
+      label_drag_story: "Move %{name}"
+    story_menu_component:
+      label_actions: "Story actions"
+  backlogs_points_burn_direction: "Pontok teendő fel/le"
+  backlogs_product_backlog: "Termék backlog"
+  backlogs_story: "Sztori"
+  backlogs_story_type: "Story types"
+  backlogs_task: "Feladat"
+  backlogs_task_type: "Task type"
+  backlogs_wiki_template: "Template for sprint wiki page"
+  backlogs_empty_title: "No versions are defined yet"
+  backlogs_empty_action_text: "To start using backlogs, please create a version first"
+  backlogs_not_configured_title: "Backlogs not configured"
+  backlogs_not_configured_description: "Story and task types need to be set before using this module."
+  backlogs_not_configured_action_text: "Configure Backlogs"
+  burndown:
+    story_points: "Story points"
+    story_points_ideal: "Story points (ideal)"
+  errors:
+    attributes:
+      task_type:
+        cannot_be_story_type: "nem lehet egyúttal történet típus is"
+  label_backlogs: "Backlogs"
+  label_backlogs_unconfigured: "You have not configured Backlogs yet. Please go to %{administration} > %{plugins}, then click on the %{configure} link for this plugin. Once you have set the fields, come back to this page to start using the tool."
+  label_blocks_ids: "IDs of blocked work packages"
+  label_column_in_backlog: "Column in backlog"
+  label_points_burn_down: "Le"
+  label_points_burn_up: "Fel"
+  label_select_type: "Válasszon típust"
+  label_select_types: "Típusok kiválasztása"
+  label_selected_type: "Kiválasztott típus"
+  label_selected_types: "Kiválasztott típusok"
+  label_sprint_impediments: "Sprint akadályai"
+  label_task_board: "Task board"
+  permission_view_master_backlog: "View master backlog"
+  permission_view_taskboards: "View taskboards"
+  permission_select_done_statuses: "Elkészültek kiválasztása"
+  permission_update_sprints: "Update sprints"
+  project_module_backlogs: "Backlogs"
+  rb_burndown_charts:
+    show:
+      blankslate_title: "No burndown data available"
+      blankslate_description: "Set start and end date for the sprint to generate a burndown chart."
+  remaining_hours: "Fennmaradó órák"
+  version_settings_display_label: "Column in backlog"
+  version_settings_display_option_left: "balra"
+  version_settings_display_option_none: "none"
+  version_settings_display_option_right: "jobbra"
+  setting_plugin_openproject_backlogs_story_types_caption: |
+    Backlog történetekként kezelt típusok (pl. Feature, User story). Különbözniük kell a feladattípustól.
+  setting_plugin_openproject_backlogs_task_type_caption: |
+    Type used for story tasks. Must differ from story types.

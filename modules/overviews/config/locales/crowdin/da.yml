@@ -1,0 +1,5 @@
+da:
+  overviews:
+    label_home: "%{workspace_type} hjem"
+    label_dashboard: "Oversigtspanel"
+    label_overview: "Overblik"

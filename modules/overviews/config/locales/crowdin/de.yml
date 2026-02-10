@@ -1,0 +1,5 @@
+de:
+  overviews:
+    label_home: "%{workspace_type}-Startseite"
+    label_dashboard: "Dashboard"
+    label_overview: "Übersicht"

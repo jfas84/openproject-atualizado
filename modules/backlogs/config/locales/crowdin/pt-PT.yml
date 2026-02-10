@@ -1,0 +1,146 @@
+#-- copyright
+#OpenProject is an open source project management software.
+#Copyright (C) the OpenProject GmbH
+#This program is free software; you can redistribute it and/or
+#modify it under the terms of the GNU General Public License version 3.
+#OpenProject is a fork of ChiliProject, which is a fork of Redmine. The copyright follows:
+#Copyright (C) 2006-2013 Jean-Philippe Lang
+#Copyright (C) 2010-2013 the ChiliProject Team
+#This program is free software; you can redistribute it and/or
+#modify it under the terms of the GNU General Public License
+#as published by the Free Software Foundation; either version 2
+#of the License, or (at your option) any later version.
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+#You should have received a copy of the GNU General Public License
+#along with this program; if not, write to the Free Software
+#Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#See COPYRIGHT and LICENSE files for more details.
+#++
+pt-PT:
+  plugin_openproject_backlogs:
+    name: "Backlogs do OpenProject"
+    description: "Este módulo acrescenta funcionalidades que permitem às equipas Agile trabalhar com o OpenProject em projetos Scrum."
+  activerecord:
+    attributes:
+      sprint:
+        duration: "Sprint duration"
+      work_package:
+        position: "Posição"
+        story_points: "Pontos de histórico"
+        backlogs_work_package_type: "Tipo de backlog"
+    errors:
+      models:
+        work_package:
+          attributes:
+            blocks_ids:
+              can_only_contain_work_packages_of_current_sprint: "pode conter somente os IDs dos pacotes de trabalho no sprint atual."
+              must_block_at_least_one_work_package: "deve conter a identificação de pelo menos um bilhete."
+            version_id:
+              task_version_must_be_the_same_as_story_version: "tem ser o mesmo que a versão da história do pai."
+        sprint:
+          cannot_end_before_it_starts: "Sprint não pode terminar antes de começar."
+  attributes:
+    task_type: "Tipo de tarefa"
+  backlogs:
+    any: "qualquer"
+    column_width: "Column width"
+    definition_of_done: "Definição de feito"
+    impediment: "Impedimento"
+    label_versions_default_fold_state: "Mostrar versões dobradas"
+    caption_versions_default_fold_state: "Versões não serão expandidas por predefinição quando visualizar os backlogs. Cada uma tem de ser expandida manualmente."
+    work_package_is_closed: "Pacote de trabalho está feito quando"
+    label_is_done_status: "O estado %{status_name} significa terminado"
+    points_label:
+      one: "point"
+      other: "points"
+    positions_could_not_be_rebuilt: "As posições não puderam ser reconstruídas."
+    positions_rebuilt_successfully: "Posições reconstruídas com êxito."
+    rebuild: "Reconstruir"
+    rebuild_positions: "Reconstruir as posições"
+    remaining_hours: "Trabalho restante"
+    show_burndown_chart: "Gráfico de Burndown"
+    story: "História"
+    story_points:
+      one: "%{count} story point"
+      other: "%{count} story points"
+    task: "Tarefa"
+    task_color: "Cor de tarefa"
+    unassigned: "Não atribuído"
+    user_preference:
+      header_backlogs: "Módulo de backlogs"
+      button_update_backlogs: "Atualizar o módulo de backlogs"
+    backlog_component:
+      blankslate_title: "%{name} is empty"
+      blankslate_description: "No items planned yet. Drag items here to add them."
+    backlog_header_component:
+      label_toggle_backlog: "Collapse/Expand %{name}"
+      label_story_count:
+        zero: "No stories in backlog"
+        one: "%{count} story in backlog"
+        other: "%{count} stories in backlog"
+    backlog_menu_component:
+      label_actions: "Backlog actions"
+      action_menu:
+        edit_sprint: "Edit sprint"
+        new_story: "New story"
+        stories_tasks: "Stories/Tasks"
+        task_board: "Task board"
+        burndown_chart: "Burndown chart"
+        wiki: "Wiki"
+        properties: "Properties"
+    story_component:
+      label_drag_story: "Move %{name}"
+    story_menu_component:
+      label_actions: "Story actions"
+  backlogs_points_burn_direction: "Pontos queimam para cima/para baixo"
+  backlogs_product_backlog: "Backlog do produto"
+  backlogs_story: "História"
+  backlogs_story_type: "Tipo de histórias"
+  backlogs_task: "Tarefa"
+  backlogs_task_type: "Tipo de tarefa"
+  backlogs_wiki_template: "Modelo para a página wiki de sprint"
+  backlogs_empty_title: "No versions are defined yet"
+  backlogs_empty_action_text: "To start using backlogs, please create a version first"
+  backlogs_not_configured_title: "Backlogs not configured"
+  backlogs_not_configured_description: "Story and task types need to be set before using this module."
+  backlogs_not_configured_action_text: "Configure Backlogs"
+  burndown:
+    story_points: "Story points"
+    story_points_ideal: "Story points (ideal)"
+  errors:
+    attributes:
+      task_type:
+        cannot_be_story_type: "não pode ser também um tipo de história"
+  label_backlogs: "Backlogs"
+  label_backlogs_unconfigured: "Ainda não configurou os backlogs. Vá a %{administration} > %{plugins}, e depois clique no link %{configure} para este plugin. Após definir os campos, volte a esta página para começar a utilizar a ferramenta."
+  label_blocks_ids: "Identificações de pacotes de trabalho bloqueados"
+  label_column_in_backlog: "Coluna no backlog"
+  label_points_burn_down: "Abaixo"
+  label_points_burn_up: "Acima"
+  label_select_type: "Selecionar um tipo"
+  label_select_types: "Selecionar tipos"
+  label_selected_type: "Tipo selecionado"
+  label_selected_types: "Tipos selecionados"
+  label_sprint_impediments: "Impedimentos de Sprint"
+  label_task_board: "Quadro de tarefas"
+  permission_view_master_backlog: "Ver o backlog principal"
+  permission_view_taskboards: "Ver quadros de tarefas"
+  permission_select_done_statuses: "Selecione os estados concluídos"
+  permission_update_sprints: "Atualizar sprints"
+  project_module_backlogs: "Backlogs"
+  rb_burndown_charts:
+    show:
+      blankslate_title: "No burndown data available"
+      blankslate_description: "Set start and end date for the sprint to generate a burndown chart."
+  remaining_hours: "trabalho restante"
+  version_settings_display_label: "Coluna no backlog"
+  version_settings_display_option_left: "esquerda"
+  version_settings_display_option_none: "nenhum"
+  version_settings_display_option_right: "direita"
+  setting_plugin_openproject_backlogs_story_types_caption: |
+    Tipos tratados como histórias do backlog (por exemplo, destaque, história de utilizador). Deve ser diferente do tipo de tarefa.
+  setting_plugin_openproject_backlogs_task_type_caption: |
+    Tipo utilizado para tarefas da história. Deve ser diferente dos tipos de histórias.

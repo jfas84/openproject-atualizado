@@ -1,0 +1,146 @@
+#-- copyright
+#OpenProject is an open source project management software.
+#Copyright (C) the OpenProject GmbH
+#This program is free software; you can redistribute it and/or
+#modify it under the terms of the GNU General Public License version 3.
+#OpenProject is a fork of ChiliProject, which is a fork of Redmine. The copyright follows:
+#Copyright (C) 2006-2013 Jean-Philippe Lang
+#Copyright (C) 2010-2013 the ChiliProject Team
+#This program is free software; you can redistribute it and/or
+#modify it under the terms of the GNU General Public License
+#as published by the Free Software Foundation; either version 2
+#of the License, or (at your option) any later version.
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+#You should have received a copy of the GNU General Public License
+#along with this program; if not, write to the Free Software
+#Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#See COPYRIGHT and LICENSE files for more details.
+#++
+si:
+  plugin_openproject_backlogs:
+    name: "OpenProject Backlogs"
+    description: "This module adds features enabling agile teams to work with OpenProject in Scrum projects."
+  activerecord:
+    attributes:
+      sprint:
+        duration: "Sprint duration"
+      work_package:
+        position: "තත්ත්වය"
+        story_points: "කතන්දර කරුණු"
+        backlogs_work_package_type: "බැක්ලොග් වර්ගය"
+    errors:
+      models:
+        work_package:
+          attributes:
+            blocks_ids:
+              can_only_contain_work_packages_of_current_sprint: "පමණක් වත්මන් ස්ප්රින්ට් වැඩ පැකේජ IDS අඩංගු විය හැක."
+              must_block_at_least_one_work_package: "අවම වශයෙන් එක් ටිකට් පතක හැඳුනුම්පත අඩංගු විය යුතුය."
+            version_id:
+              task_version_must_be_the_same_as_story_version: "මව් කතාවේ අනුවාදයට සමාන විය යුතුය."
+        sprint:
+          cannot_end_before_it_starts: "ස්ප්රින්ට් ආරම්භ වීමට පෙර අවසන් කළ නොහැක."
+  attributes:
+    task_type: "Task type"
+  backlogs:
+    any: "ඔනෑම"
+    column_width: "Column width"
+    definition_of_done: "සිදු කරන ලද අර්ථ දැක්වීම"
+    impediment: "බාධාවන්"
+    label_versions_default_fold_state: "නවනු අනුවාද පෙන්වන්න"
+    caption_versions_default_fold_state: "Versions will not be expanded by default when viewing backlogs. Each one has to be manually expanded."
+    work_package_is_closed: "වැඩ පැකේජය සිදු කරනු ලබන්නේ කවදාද"
+    label_is_done_status: "තත්ත්වය %{status_name} යන්නෙන් අදහස් කරන්නේ"
+    points_label:
+      one: "point"
+      other: "points"
+    positions_could_not_be_rebuilt: "තනතුරු නැවත ගොඩනැඟිය නොහැක."
+    positions_rebuilt_successfully: "තනතුරු සාර්ථකව නැවත ගොඩනඟා ඇත."
+    rebuild: "නැවත"
+    rebuild_positions: "තනතුරු නැවත"
+    remaining_hours: "Remaining work"
+    show_burndown_chart: "බර්න්ඩවුන් සටහන"
+    story: "කතාව"
+    story_points:
+      one: "%{count} story point"
+      other: "%{count} story points"
+    task: "කාර්යය"
+    task_color: "කාර්ය වර්ණ"
+    unassigned: "නොපවරා ඇත"
+    user_preference:
+      header_backlogs: "Backlogs module"
+      button_update_backlogs: "Update backlogs module"
+    backlog_component:
+      blankslate_title: "%{name} is empty"
+      blankslate_description: "No items planned yet. Drag items here to add them."
+    backlog_header_component:
+      label_toggle_backlog: "Collapse/Expand %{name}"
+      label_story_count:
+        zero: "No stories in backlog"
+        one: "%{count} story in backlog"
+        other: "%{count} stories in backlog"
+    backlog_menu_component:
+      label_actions: "Backlog actions"
+      action_menu:
+        edit_sprint: "Edit sprint"
+        new_story: "New story"
+        stories_tasks: "Stories/Tasks"
+        task_board: "Task board"
+        burndown_chart: "Burndown chart"
+        wiki: "Wiki"
+        properties: "Properties"
+    story_component:
+      label_drag_story: "Move %{name}"
+    story_menu_component:
+      label_actions: "Story actions"
+  backlogs_points_burn_direction: "ලකුණු ඉහළ/පහළ පිළිස්සීම"
+  backlogs_product_backlog: "නිෂ්පාදන බැක්ලොග්"
+  backlogs_story: "කතාව"
+  backlogs_story_type: "කතන්දර වර්ග"
+  backlogs_task: "කාර්යය"
+  backlogs_task_type: "කාර්ය වර්ගය"
+  backlogs_wiki_template: "ස්ප්රින්ට් විකි පිටුව සඳහා සැකිල්ල"
+  backlogs_empty_title: "No versions are defined yet"
+  backlogs_empty_action_text: "To start using backlogs, please create a version first"
+  backlogs_not_configured_title: "Backlogs not configured"
+  backlogs_not_configured_description: "Story and task types need to be set before using this module."
+  backlogs_not_configured_action_text: "Configure Backlogs"
+  burndown:
+    story_points: "Story points"
+    story_points_ideal: "Story points (ideal)"
+  errors:
+    attributes:
+      task_type:
+        cannot_be_story_type: "can not also be a story type"
+  label_backlogs: "බැක්ලොග්ස්"
+  label_backlogs_unconfigured: "ඔබ තවමත් Backlogs වින්යාස කර නැත. කරුණාකර යන්න %{administration} > %{plugins}, ඉන්පසු මෙම ප්ලගිනය සඳහා %{configure} සබැඳිය ක්ලික් කරන්න. ඔබ ක්ෂේත්ර සකස් කළ පසු, මෙවලම භාවිතා කිරීම ආරම්භ කිරීමට මෙම පිටුවට නැවත එන්න."
+  label_blocks_ids: "අවහිර කරන ලද වැඩ පැකේජ වල IDS"
+  label_column_in_backlog: "පසුබිම තුළ තීරුව"
+  label_points_burn_down: "පහළට"
+  label_points_burn_up: "ඉහළට"
+  label_select_type: "Select a type"
+  label_select_types: "Select types"
+  label_selected_type: "Selected type"
+  label_selected_types: "Selected types"
+  label_sprint_impediments: "ස්ප්රින්ට් බාධාවන්"
+  label_task_board: "කාර්ය මණ්ඩලය"
+  permission_view_master_backlog: "ස්වාමියා බැක්ලොග් දැක්ම"
+  permission_view_taskboards: "දැක්ම කාර්ය මණ්ඩල"
+  permission_select_done_statuses: "Select done statuses"
+  permission_update_sprints: "ස්ප්රින්ට් යාවත්කාලීන"
+  project_module_backlogs: "බැක්ලොග්ස්"
+  rb_burndown_charts:
+    show:
+      blankslate_title: "No burndown data available"
+      blankslate_description: "Set start and end date for the sprint to generate a burndown chart."
+  remaining_hours: "remaining work"
+  version_settings_display_label: "පසුබිම තුළ තීරුව"
+  version_settings_display_option_left: "වම්"
+  version_settings_display_option_none: "කිසිවක් නැත"
+  version_settings_display_option_right: "අයිතිය"
+  setting_plugin_openproject_backlogs_story_types_caption: |
+    Types treated as backlog stories (e.g., Feature, User story). Must differ from task type.
+  setting_plugin_openproject_backlogs_task_type_caption: |
+    Type used for story tasks. Must differ from story types.
